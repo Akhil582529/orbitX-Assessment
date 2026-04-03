@@ -2,7 +2,7 @@ from extractor import extract_all
 from llm import process_document
 from writer import write_results
 
-def run_pipeline(docs_folder="../../docs"):
+def run_pipeline(docs_folder="./docs"):
     print("Starting pipeline...")
 
     extracted = extract_all(docs_folder)
