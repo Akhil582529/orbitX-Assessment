@@ -35,6 +35,22 @@ router.post('/', upload.array('documents'), (req, res) => {
 
   console.log(`Uploaded ${req.files.length} files`);
 
+  setImmediate(() => {
+    const python = spawn('python3', ['src/pipeline/main.py']);
+
+    python.stdout.on('data', (data) => {
+      console.log(`Pipeline: ${data}`);
+    });
+
+    python.stderr.on('data', (data) => {
+      console.error(`Pipeline error: ${data}`);
+    });
+
+    python.on('close', (code) => {
+      console.log(`Pipeline exited with code ${code}`);
+    });
+  });
+
   const python = spawn('python3', ['src/pipeline/main.py']);
 
   python.stdout.on('data', (data) => {

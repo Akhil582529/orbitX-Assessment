@@ -27,29 +27,31 @@ def extract_text_from_pdf(file_path):
         return text
     except Exception as e:
         print(f"Error extracting text from PDF: {e}")
-        return ""   
+        return None
 
 def extract_all(docs_folder):
     results = []
-
     files = os.listdir(docs_folder)
+    print(f"Raw files from os.listdir: {files}")
+    
     if len(files) == 0:
         print("No files found in the docs folder.")
         return results
-    
+
     for filename in files:
+        print(f"Loop iteration: {filename}")  # ✅ add this
         filePath = os.path.join(docs_folder, filename)
+        print(f"Checking: {filename}, isdir: {os.path.isdir(filePath)}")
         if os.path.isdir(filePath):
             continue
-
         text = extract_text(filePath)
-
+        print(f"Text extracted for {filename}: {bool(text)}")  # ✅ add this
         results.append({
             "file": filename,
             "text": text
         })
 
-        return results
+    return results
 
 if __name__ == "__main__":
     docs_folder = "./docs"

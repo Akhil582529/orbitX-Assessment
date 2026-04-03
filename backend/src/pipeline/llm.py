@@ -62,11 +62,11 @@ def process_document(file):
     text = file["text"]
 
     if not text:
-        print(f"Skipping LLM call for {filename} — no text extracted")
+        print(f"Skipping {filename} — empty document")
         return {
             "file": filename,
             "status": "skipped",
-            "reason": "no text extracted",
+            "reason": "empty document",  
             "doc_type": None,
             "extracted_fields": {},
             "summary": None,

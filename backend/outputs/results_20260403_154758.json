@@ -1,0 +1,48 @@
+{
+  "processed_at": "20260403_154758",
+  "summary": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0,
+    "skipped": 0
+  },
+  "documents": [
+    {
+      "file": "dummy.pdf",
+      "status": "success",
+      "doc_type": "invoice",
+      "extracted_fields": {
+        "vendor_name": "Hilpert PLC",
+        "invoice_date": "2024-09-30",
+        "total_amount": 32100.45,
+        "due_date": "2024-12-29",
+        "line_items": [
+          {
+            "description": "Ex dignissimos maxime et.",
+            "quantity": 76,
+            "unit_price": 377.12,
+            "line_total": 28661.12
+          }
+        ]
+      },
+      "summary": "This document is an invoice from Hilpert PLC to Carter, Dicki and Lang, dated 2024-09-30. The invoice details one line item for services totaling 28,661.12 € before VAT. With 12% VAT, the total invoice amount due is 32,100.45 €, payable within 90 days by 2024-12-29.",
+      "confidence": "high",
+      "errors": []
+    },
+    {
+      "file": "simple.txt",
+      "status": "success",
+      "doc_type": "other",
+      "extracted_fields": {
+        "vendor_name": null,
+        "invoice_date": null,
+        "total_amount": null,
+        "due_date": null,
+        "line_items": []
+      },
+      "summary": "This document is a simple text file containing placeholder 'Lorem ipsum' content. It explicitly states that it is a sample TXT file provided by Sample-Files.com for general use and resources. No specific transactional or contractual information is present.",
+      "confidence": "high",
+      "errors": []
+    }
+  ]
+}
