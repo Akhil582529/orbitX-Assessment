@@ -8,7 +8,6 @@ const UploadFiles = () => {
   useEffect(() => {
     if(inputRef.current){
       inputRef.current.setAttribute('webkitdirectory', '');
-      inputRef.current.setAttribute('directory', '');
     }
   }, []);
 
@@ -30,7 +29,7 @@ const UploadFiles = () => {
     });
   
     try {
-      const res = await fetch("http://localhost:5000/upload", {
+      const res = await fetch("http://localhost:8000/upload", {
         method: "POST",
         body: formData
       });
