@@ -25,7 +25,6 @@ const fileFilter = (req, file, cb) => {
 };
 
 const upload = multer({ storage, fileFilter });
-
 router.post('/', upload.array('documents'), (req, res) => {
 
   if (!req.files || req.files.length === 0) {
